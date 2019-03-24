@@ -123,7 +123,7 @@ graph <- create_graph() %>%
   set_node_attrs(fontcolor, "black") %>%
   add_edges_from_table(res_df, from_col = from, to_col = to, from_to_map = label)
 
-export_graph(graph, file_name = "result.svg", width = 2000, height = 2000)
+export_graph(graph, file_name = "result.svg", width = 1200, height = 1200)
 ```
 
 Here's result:

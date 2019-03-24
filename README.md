@@ -364,7 +364,7 @@ graph <- create_graph() %>%
 #> 
 #> This warning is displayed once per session.
 
-export_graph(graph, file_name = "result.svg", width = 2000, height = 2000)
+export_graph(graph, file_name = "result.svg", width = 1200, height = 1200)
 ```
 
 Here’s result:
