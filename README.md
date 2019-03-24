@@ -100,104 +100,31 @@ res_df <- purrr::map_dfr(res, ~ data.frame(to = ., stringsAsFactors = FALSE), .i
 ### Table
 
 ``` r
-knitr::kable(res_df)
+knitr::kable(dplyr::filter(res_df, to != "list"))
 ```
 
 | from                        | to                        |
 | :-------------------------- | :------------------------ |
 | aes                         | enquos                    |
-| aes\_                       | list                      |
-| aes\_q                      | list                      |
-| aes\_string                 | list                      |
-| annotate                    | list                      |
-| annotate                    | list                      |
-| annotation\_logticks        | list                      |
-| annotation\_map             | list                      |
 | as.list.ggproto             | as.list.environment       |
 | borders                     | geom\_polygon             |
 | collide                     | dapply                    |
 | collide                     | dapply                    |
 | collide2                    | pos                       |
-| coord\_map                  | list                      |
 | cut\_interval               | cut                       |
 | cut\_number                 | cut                       |
 | dapply                      | fun                       |
-| data\_frame                 | list                      |
 | datetime\_scale             | continuous\_scale         |
-| dispatch\_args              | list                      |
 | element\_grob.element\_line | polylineGrob              |
 | element\_grob.element\_rect | rectGrob                  |
 | element\_render             | element\_grob             |
-| expand\_limits              | list                      |
-| find\_args                  | list                      |
-| geom\_abline                | list                      |
-| geom\_area                  | list                      |
 | geom\_bar                   | geom\_histogram           |
-| geom\_bar                   | list                      |
-| geom\_bin2d                 | list                      |
-| geom\_blank                 | list                      |
-| geom\_boxplot               | list                      |
-| geom\_col                   | list                      |
-| geom\_contour               | list                      |
-| geom\_count                 | list                      |
-| geom\_crossbar              | list                      |
-| geom\_curve                 | list                      |
-| geom\_density               | list                      |
-| geom\_density\_2d           | list                      |
-| geom\_density2d             | list                      |
-| geom\_dotplot               | list                      |
-| geom\_errorbar              | list                      |
-| geom\_errorbarh             | list                      |
-| geom\_freqpoly              | list                      |
-| geom\_hex                   | list                      |
-| geom\_histogram             | list                      |
-| geom\_hline                 | list                      |
-| geom\_jitter                | list                      |
-| geom\_label                 | list                      |
-| geom\_line                  | list                      |
-| geom\_linerange             | list                      |
-| geom\_map                   | list                      |
-| geom\_path                  | list                      |
-| geom\_point                 | list                      |
-| geom\_pointrange            | list                      |
-| geom\_polygon               | list                      |
-| geom\_qq                    | list                      |
-| geom\_qq\_line              | list                      |
-| geom\_quantile              | list                      |
-| geom\_raster                | list                      |
-| geom\_rect                  | list                      |
-| geom\_ribbon                | list                      |
-| geom\_rug                   | list                      |
-| geom\_segment               | list                      |
-| geom\_sf                    | list                      |
-| geom\_sf\_label             | list                      |
-| geom\_sf\_text              | list                      |
-| geom\_smooth                | list                      |
-| geom\_spoke                 | list                      |
-| geom\_step                  | list                      |
-| geom\_text                  | list                      |
-| geom\_tile                  | list                      |
-| geom\_violin                | list                      |
-| geom\_vline                 | list                      |
 | ggplot.default              | fortify                   |
-| ggproto                     | list                      |
 | ggsave                      | dev                       |
-| guide\_colorbar             | list                      |
-| guide\_colourbar            | list                      |
-| guide\_legend               | list                      |
-| guides                      | list                      |
-| interleave.default          | list                      |
-| interleave.unit             | list                      |
-| labeller                    | list                      |
 | labs                        | list2                     |
-| lims                        | list                      |
 | make\_scale                 | scale                     |
 | manual\_scale               | discrete\_scale           |
 | map\_data                   | map                       |
-| mean\_cl\_boot              | list                      |
-| mean\_cl\_normal            | list                      |
-| mean\_sdl                   | list                      |
-| median\_hilow               | list                      |
 | message\_wrap               | paste                     |
 | print.ggproto               |                           |
 | qplot                       | enquos                    |
@@ -285,36 +212,8 @@ knitr::kable(res_df)
 | scale\_y\_log10             | scale\_y\_continuous      |
 | scale\_y\_reverse           | scale\_y\_continuous      |
 | scale\_y\_sqrt              | scale\_y\_continuous      |
-| stat\_bin                   | list                      |
-| stat\_bin\_2d               | list                      |
-| stat\_bin\_hex              | list                      |
-| stat\_bin2d                 | list                      |
-| stat\_binhex                | list                      |
-| stat\_boxplot               | list                      |
-| stat\_contour               | list                      |
-| stat\_count                 | list                      |
-| stat\_density               | list                      |
-| stat\_density\_2d           | list                      |
-| stat\_density2d             | list                      |
-| stat\_ecdf                  | list                      |
-| stat\_ellipse               | list                      |
-| stat\_function              | list                      |
-| stat\_identity              | list                      |
-| stat\_qq                    | list                      |
-| stat\_qq\_line              | list                      |
-| stat\_quantile              | list                      |
-| stat\_sf                    | list                      |
-| stat\_sf\_coordinates       | list                      |
-| stat\_smooth                | list                      |
 | stat\_spoke                 | geom\_spoke               |
-| stat\_sum                   | list                      |
-| stat\_summary               | list                      |
-| stat\_summary\_2d           | list                      |
-| stat\_summary\_bin          | list                      |
-| stat\_summary\_hex          | list                      |
 | stat\_summary2d             | stat\_summary\_2d         |
-| stat\_unique                | list                      |
-| stat\_ydensity              | list                      |
 | summarise\_by\_x            | dapply                    |
 | tapply\_df                  | fun                       |
 | theme                       | find\_args                |
@@ -326,6 +225,32 @@ knitr::kable(res_df)
 | warning\_wrap               | paste                     |
 | xlim                        | c                         |
 | ylim                        | c                         |
+
+### Hubs
+
+The names of functions that actually consume `...`:
+
+``` r
+to <- unique(res_df$to)
+to <- purrr::discard(to, ~ . %in% res_df$from)
+to
+#>  [1] "enquos"              "list"                "as.list.environment"
+#>  [4] "pos"                 "cut"                 "fun"                
+#>  [7] "continuous_scale"    "polylineGrob"        "rectGrob"           
+#> [10] "element_grob"        "fortify"             "dev"                
+#> [13] "list2"               "scale"               "discrete_scale"     
+#> [16] "map"                 "paste"               ""                   
+#> [19] "scale_x_continuous"  "scale_y_continuous"  "trans_x"            
+#> [22] "trans_y"             "quos"                "c"
+```
+
+Among these, the ones in ggplot2:
+
+``` r
+purrr::keep(to, ~ . %in% obj_names)
+#> [1] "continuous_scale"   "element_grob"       "fortify"           
+#> [4] "discrete_scale"     "scale_x_continuous" "scale_y_continuous"
+```
 
 ### Visualize
 
@@ -367,6 +292,6 @@ graph <- create_graph() %>%
 export_graph(graph, file_name = "result.svg", width = 1200, height = 1200)
 ```
 
-Here’s result:
+Here’s the result:
 
 [![](result.svg)](result.svg)

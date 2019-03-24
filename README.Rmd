@@ -96,7 +96,23 @@ res_df <- purrr::map_dfr(res, ~ data.frame(to = ., stringsAsFactors = FALSE), .i
 ### Table
 
 ```{r}
-knitr::kable(res_df)
+knitr::kable(dplyr::filter(res_df, to != "list"))
+```
+
+### Hubs
+
+The names of functions that actually consume `...`:
+
+```{r}
+to <- unique(res_df$to)
+to <- purrr::discard(to, ~ . %in% res_df$from)
+to
+```
+
+Among these, the ones in ggplot2:
+
+```{r}
+purrr::keep(to, ~ . %in% obj_names)
 ```
 
 ### Visualize
@@ -126,6 +142,6 @@ graph <- create_graph() %>%
 export_graph(graph, file_name = "result.svg", width = 1200, height = 1200)
 ```
 
-Here's result:
+Here's the result:
 
 [![](result.svg)](result.svg)
